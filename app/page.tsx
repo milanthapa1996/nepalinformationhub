@@ -1,113 +1,112 @@
-import Image from "next/image";
+import ArticleLists from "@/components/ArticleLists";
+import ArticleLists2 from "@/components/ArticleLists2";
+import Categories from "@/components/Categories";
+import HeroSection from "@/components/HeroSection";
+import NewsLetter from "@/components/NewsLetter";
+import OnlineCourses from "@/components/OnlineCourses";
+import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 
 export default function Home() {
+  const loksewaArticles = [
+    {
+      id: 1,
+      title:
+        "Global Climate Summit 2024: Charting a Path Towards Sustainable Future",
+      authorFirstName: "John",
+      authorLastName: "Doe",
+      authorAvatarUrl:
+        "https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_640.jpg",
+      createdAt: new Date(),
+      shortDescription:
+        "In the wake of mounting environmental concerns and escalating climate crises, the Global Climate Summit 2024 emerges as a beacon of hope, bringing together world leaders, activists, and experts to confront the pressing challenges facing our planet. As discussions unfold and commitments are made, the summit serves as a pivotal moment in our collective journey towards a more sustainable and resilient future. From groundbreaking innovations to collaborative initiatives, the summit sets the stage for bold action and transformative change, underscoring the urgency of addressing climate change and safeguarding the health of our planet for generations to come.",
+      tags: ["Technology", "Environment"],
+      featuredImageUrl:
+        "https://cdn.pixabay.com/photo/2019/04/23/20/46/climate-action-4150536_640.jpg",
+    },
+    {
+      id: 2,
+      title:
+        "Advancements in Renewable Energy: A Sustainable Solution for the Future",
+      authorFirstName: "Emma",
+      authorLastName: "Johnson",
+      authorAvatarUrl:
+        "https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_640.jpg",
+      createdAt: new Date(),
+      shortDescription:
+        "Renewable energy sources such as solar, wind, and hydroelectric power are increasingly being recognized as key components of a sustainable energy future. This article explores recent advancements in renewable energy technologies and their potential to revolutionize the global energy landscape.",
+      tags: ["Technology", "Environment", "Renewable"],
+      featuredImageUrl: "https://cdn.pixabay.com/photo/2013/06/07/09/59/cape-ortegal-117601_640.jpg",
+    },
+    {
+      id: 3,
+      title:
+        "The Rise of Electric Vehicles: Paving the Way for a Greener Transportation Sector",
+      authorFirstName: "Michael",
+      authorLastName: "Smith",
+      authorAvatarUrl:
+        "https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_640.jpg",
+      createdAt: new Date(),
+      shortDescription:
+        "As concerns over air pollution and climate change escalate, electric vehicles (EVs) have emerged as a promising solution to reduce greenhouse gas emissions from the transportation sector. This article explores the growing popularity of EVs, advancements in battery technology, and the potential impact on the automotive industry.",
+      tags: ["Technology", "Environment", "Electric"],
+      featuredImageUrl: "https://cdn.pixabay.com/photo/2022/01/16/23/15/car-6943487_640.jpg",
+    },
+    {
+      id: 4,
+      title:
+        "Sustainable Agriculture Practices: Nurturing the Earth and Feeding the Future",
+      authorFirstName: "Sophia",
+      authorLastName: "Brown",
+      authorAvatarUrl:
+        "https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_640.jpg",
+      createdAt: new Date(),
+      shortDescription:
+        "As the global population continues to grow, the demand for food is increasing exponentially. Sustainable agriculture practices aim to meet this demand while minimizing environmental impact and preserving natural resources for future generations. This article examines innovative farming techniques, agroecological principles, and the importance of biodiversity in ensuring food security and environmental sustainability.",
+      tags: ["Environment", "Sustainability", "Agriculture"],
+      featuredImageUrl: "https://cdn.pixabay.com/photo/2015/07/05/12/03/grain-832194_640.jpg",
+    },
+  ];
+  const recentArticle = {
+    id: 1,
+    title:
+      "Global Climate Summit 2024: Charting a Path Towards Sustainable Future",
+    authorFirstName: "John",
+    authorLastName: "Doe",
+    authorAvatarUrl:
+      "https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_640.jpg",
+    createdAt: new Date(),
+    shortDescription:
+      "In the wake of mounting environmental concerns and escalating climate crises, the Global Climate Summit 2024 emerges as a beacon of hope, bringing together world leaders, activists, and experts to confront the pressing challenges facing our planet. As discussions unfold and commitments are made, the summit serves as a pivotal moment in our collective journey towards a more sustainable and resilient future. From groundbreaking innovations to collaborative initiatives, the summit sets the stage for bold action and transformative change, underscoring the urgency of addressing climate change and safeguarding the health of our planet for generations to come.",
+    descriptionLength: 350,
+    tags: ["Technology", "Environment"],
+    featuredImageUrl: "https://via.placeholder.com/800x400",
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main>
+      <HeroSection article={recentArticle} />
+      <div>
+        <h2 className="text-2xl font-bold text-slate-700 mt-6 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
+          Loksewa
+          <span className="text-sm text-center text-slate-400 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
+            All articles{" "}
+            <ChevronDoubleRightIcon className="h-4 w-4 inline-block" />
+          </span>
+        </h2>
+        <ArticleLists loksewaArticles={loksewaArticles} />
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <Categories />
+      <div className="mb-24">
+        <h2 className="text-2xl font-bold text-slate-700 mt-6 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
+          Army Cadet
+          <span className="text-sm text-center text-slate-400 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
+            All articles{" "}
+            <ChevronDoubleRightIcon className="h-4 w-4 inline-block" />
+          </span>
+        </h2>
+        <ArticleLists2 loksewaArticles={loksewaArticles} />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <OnlineCourses/>
+      <NewsLetter/>
     </main>
   );
 }
