@@ -11,20 +11,20 @@ interface Category {
 const MenuBar: React.FC = () => {
   const categories: Category[] = [
     { name: "Recent", slug: "/" },
-    { name: "Loksewa", slug: "loksewa" },
-    { name: "Engineering", slug: "engineering" },
-    { name: "Management", slug: "management" },
-    { name: "Technology", slug: "technology" },
-    { name: "Design", slug: "design" },
-    { name: "Finance", slug: "finance" },
-    { name: "Category 1", slug: "category-1" },
-    { name: "Category2", slug: "category-2" },
-    { name: "Category3", slug: "category-3" },
-    { name: "Category4", slug: "category-4" },
-    { name: "Category5", slug: "category-5" },
-    { name: "Category6", slug: "category-5" },
-    { name: "Category7", slug: "category-5" },
-    { name: "Category8", slug: "category-5" },
+    { name: "#Loksewa", slug: "loksewa" },
+    { name: "#Engineering", slug: "engineering" },
+    { name: "#Management", slug: "management" },
+    { name: "#Technology", slug: "technology" },
+    { name: "#Design", slug: "design" },
+    { name: "#Finance", slug: "finance" },
+    { name: "#Tag 1", slug: "category-1" },
+    { name: "#Tag 2", slug: "category-1" },
+    { name: "#Tag 3", slug: "category-1" },
+    { name: "#Tag 4", slug: "category-1" },
+    { name: "#Tag 5", slug: "category-1" },
+    { name: "#Tag 6", slug: "category-1" },
+    { name: "#Tag 7", slug: "category-1" },
+    { name: "#Tag 8", slug: "category-1" },
   ];
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -78,7 +78,7 @@ const MenuBar: React.FC = () => {
         </button>
         <div ref={menuRef} className="flex overflow-hidden space-x-4" style={{ whiteSpace: "nowrap" }}>
           {categories.map((category, index) => (
-            <Link key={index} href={`/${category.slug}`} className={`${index === 0 ? 'text-blue-500' : 'text-slate-400'} hover:text-slate-800 text-sm font-semibold hover:border-x px-1 border-slate-400`}>
+            <Link key={index} href={`/${category.slug}`} className={`${index === 0 ? 'text-blue-500' : 'text-slate-500'} hover:text-slate-800 text-sm font-semibold hover:border-x px-1 border-slate-400`}>
               {category.name}
             </Link>
           ))}

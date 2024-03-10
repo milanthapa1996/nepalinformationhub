@@ -75,13 +75,15 @@ const BlogCardWithImage: React.FC<IBlogCardProps> = ({
         </div>
         <span className="text-sm font-bold text-gray-600">
           {article.authorFirstName} {article.authorLastName}{" "}
-          <span className="text-gray-400">{formatDate(article.createdAt)}</span>
+          <span className="text-gray-400 text-xs">
+            {formatDate(article.createdAt)}
+          </span>
         </span>
         <div className="md:ml-4 flex items-center space-x-2">
           {article.tags.map((tag, index) => (
             <span
               key={index}
-              className="bg-slate-200 text-slate-500 px-2 py-1 rounded-sm text-xs cursor-pointer hover:text-slate-700 hover:-translate-y-1 duration-300 transition-all"
+              className="bg-blue-100 text-blue-500 px-2 py-1 rounded-sm text-xs cursor-pointer hover:text-slate-700 hover:-translate-y-1 duration-300 transition-all"
             >
               {tag}
             </span>

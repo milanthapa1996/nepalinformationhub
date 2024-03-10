@@ -62,13 +62,13 @@ const onlineCourses: Course[] = [
   },
 ];
 
-const OnlineCourses: React.FC = () => {
+const OnlineVideos: React.FC = () => {
   return (
-    <section>
+    <section className="mb-24">
       <h2 className="text-2xl font-bold text-slate-700 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
-        Explore Online Courses
-        <span className="text-sm text-center text-slate-400 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
-          All courses{" "}
+        Explore Online Videos
+        <span className="text-sm text-center text-slate-500 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
+          All videos{" "}
           <ChevronDoubleRightIcon className="h-4 w-4 inline-block" />
         </span>
       </h2>
@@ -115,4 +115,4 @@ const OnlineCourses: React.FC = () => {
   );
 };
 
-export default OnlineCourses;
+export default OnlineVideos;

@@ -14,7 +14,7 @@ interface ArticleListsProps {
   }[];
 }
 
-const ArticleLists2: React.FC<ArticleListsProps> = ({ loksewaArticles }) => {
+const BlogSection: React.FC<ArticleListsProps> = ({ loksewaArticles }) => {
   return (
     <section>
       <div className="grid lg:grid-cols-2 grid-gap gap-16 mt-12">
@@ -32,4 +32,4 @@ const ArticleLists2: React.FC<ArticleListsProps> = ({ loksewaArticles }) => {
   );
 };
 
-export default ArticleLists2;
+export default BlogSection;

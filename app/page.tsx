@@ -1,9 +1,9 @@
 import ArticleLists from "@/components/ArticleLists";
-import ArticleLists2 from "@/components/ArticleLists2";
+import BlogSection from "@/components/BlogSection";
 import Categories from "@/components/Categories";
 import HeroSection from "@/components/HeroSection";
 import NewsLetter from "@/components/NewsLetter";
-import OnlineCourses from "@/components/OnlineCourses";
+import OnlineVideos from "@/components/OnlineVideos";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 
 export default function Home() {
@@ -86,8 +86,8 @@ export default function Home() {
       <HeroSection article={recentArticle} />
       <div>
         <h2 className="text-2xl font-bold text-slate-700 mt-6 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
-          Loksewa
-          <span className="text-sm text-center text-slate-400 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
+          Recent Articles
+          <span className="text-sm text-center text-slate-500 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
             All articles{" "}
             <ChevronDoubleRightIcon className="h-4 w-4 inline-block" />
           </span>
@@ -95,17 +95,17 @@ export default function Home() {
         <ArticleLists loksewaArticles={loksewaArticles} />
       </div>
       <Categories />
+      <OnlineVideos/>
       <div className="mb-24">
         <h2 className="text-2xl font-bold text-slate-700 mt-6 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
-          Army Cadet
-          <span className="text-sm text-center text-slate-400 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
-            All articles{" "}
+          Latest Blogs
+          <span className="text-sm text-center text-slate-500 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
+            All blogs{" "}
             <ChevronDoubleRightIcon className="h-4 w-4 inline-block" />
           </span>
         </h2>
-        <ArticleLists2 loksewaArticles={loksewaArticles} />
+        <BlogSection loksewaArticles={loksewaArticles} />
       </div>
-      <OnlineCourses/>
       <NewsLetter/>
     </main>
   );
