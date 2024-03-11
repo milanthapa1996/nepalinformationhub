@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ShareIcon } from "@heroicons/react/24/solid";
+import { Button } from "@/components/ui/button";
 
 const page = () => {
   const articleData = {
@@ -29,18 +30,19 @@ const page = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row py-4">
-        {/* Table of contents */}
+      <div className="flex flex-col md:flex-row md:justify-between py-4 mb-12">
+        <div className="max-w-screen-sm mx-auto">
+                  {/* Table of contents */}
         <div className="mb-4 md:mb-0 w-48">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="bg-slate-100 p-2">
+              <AccordionTrigger className="bg-slate-100 p-2 border border-slate-700 rounded-md shadow-sm">
                 <h3 className="font-semibold tracking-tight text-gray-600 text-lg ">
                   Table of Contents
                 </h3>
               </AccordionTrigger>
               <AccordionContent>
-                <ul className="pl-2 text-sm text-slate-500 marker:text-blue-600 list-decimal list-inside">
+                <ul className="pl-2 text-base text-slate-500 marker:text-blue-600 list-decimal list-inside space-y-1">
                   <li className="hover:text-slate-700">
                     <Link href="#article">Heading 1</Link>
                   </li>
@@ -58,22 +60,9 @@ const page = () => {
             </AccordionItem>
           </Accordion>
         </div>
-
-        <div className="max-w-screen-sm mx-auto">
           <h1 className="text-2xl font-bold text-gray-700 mb-4">
             {articleData.title}
           </h1>
-
-          {/* Featured Image using next/image*/}
-          <div className="relative h-56 md:h-80">
-            <Image
-              src={articleData.featuredImageUrl}
-              alt="featured-image"
-              fill
-              className="rounded-md object-cover"
-            />
-          </div>
-
           <div className="flex flex-col md:flex-row items-start space-y-2 md:items-center md:space-y-0  my-4">
             <div className="rounded-full overflow-hidden flex items-center justify-center mr-2">
               <Image
@@ -102,74 +91,84 @@ const page = () => {
               ))}
             </div>
           </div>
+
+          {/* Featured Image using next/image*/}
+          <div className="relative h-56 md:h-80">
+            <Image
+              src={articleData.featuredImageUrl}
+              alt="featured-image"
+              fill
+              className="rounded-md object-cover"
+            />
+          </div>
+          {/* Social Sharing Buttons */}
+          <div className="my-6">
+            <ul className="flex flex-row justify-start items-center *:cursor-pointer space-x-4">
+              <li>
+                <h3 className="font-semibold tracking-tight text-gray-600 text-sm flex items-center justify-center">
+                  <Button variant={"outline"}>Share this <ShareIcon className="w-4 h-4 ml-2" /></Button> 
+                </h3>
+              </li>
+              <li className="hover:translate-x-1 duration-300">
+                <Image
+                  src={"/fb.svg"}
+                  alt="fb-social-icon"
+                  width={30}
+                  height={30}
+                />
+              </li>
+              <li className="hover:translate-x-1 duration-300">
+                <Image
+                  src={"/insta.svg"}
+                  alt="fb-social-icon"
+                  width={30}
+                  height={30}
+                />
+              </li>
+              <li className="hover:translate-x-1 duration-300">
+                <Image
+                  src={"/link.svg"}
+                  alt="fb-social-icon"
+                  width={30}
+                  height={30}
+                />
+              </li>
+              <li className="hover:translate-x-1 duration-300">
+                <Image
+                  src={"/twt.svg"}
+                  alt="fb-social-icon"
+                  width={30}
+                  height={30}
+                />
+              </li>
+              <li className="hover:translate-x-1 duration-300">
+                <Image
+                  src={"/whatsapp.svg"}
+                  alt="fb-social-icon"
+                  width={30}
+                  height={30}
+                />
+              </li>
+              <li className="hover:translate-x-1 duration-300">
+                <Image
+                  src={"/tel.svg"}
+                  alt="fb-social-icon"
+                  width={30}
+                  height={30}
+                />
+              </li>
+            </ul>
+          </div>
+
           {/* Article description */}
-          <p className="text-lg leading-7 font-medium text-gray-500 text-justify">
+          <p className="text-sm leading-7 font-medium text-gray-500 text-justify">
             {articleData.shortDescription}
           </p>
           {/* Related Articles */}
-          <div className="hidden md:inline-block">
-          <RelatedArticles />
+          <div>
+            <RelatedArticles />
           </div>
         </div>
-        {/* Social Sharing Buttons */}
-        <div className="mt-12">
-          <h3 className="font-semibold tracking-tight text-gray-600 text-lg mb-4 flex items-center">
-            Share this <ShareIcon className="w-4 h-4 ml-2" />
-          </h3>
-          <ul className="flex flex-row md:flex-col justify-between items-center md:space-y-2 md:justify-center md:items-end *:cursor-pointer">
-            <li className="hover:translate-x-1 duration-300">
-              <Image
-                src={"/fb.svg"}
-                alt="fb-social-icon"
-                width={40}
-                height={40}
-              />
-            </li>
-            <li className="hover:translate-x-1 duration-300">
-              <Image
-                src={"/insta.svg"}
-                alt="fb-social-icon"
-                width={40}
-                height={40}
-              />
-            </li>
-            <li className="hover:translate-x-1 duration-300">
-              <Image
-                src={"/link.svg"}
-                alt="fb-social-icon"
-                width={40}
-                height={40}
-              />
-            </li>
-            <li className="hover:translate-x-1 duration-300">
-              <Image
-                src={"/twt.svg"}
-                alt="fb-social-icon"
-                width={40}
-                height={40}
-              />
-            </li>
-            <li className="hover:translate-x-1 duration-300">
-              <Image
-                src={"/whatsapp.svg"}
-                alt="fb-social-icon"
-                width={40}
-                height={40}
-              />
-            </li>
-            <li className="hover:translate-x-1 duration-300">
-              <Image
-                src={"/tel.svg"}
-                alt="fb-social-icon"
-                width={40}
-                height={40}
-              />
-            </li>
-          </ul>
-        </div>
-        <div className="inline-block md:hidden">
-          <RelatedArticles />
-          </div>
       </div>
     </>
   );

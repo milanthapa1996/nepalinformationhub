@@ -221,7 +221,7 @@ const Navbar: React.FC = () => {
             </Command>
           </PopoverContent>
         </Popover>
-        <Button className="hidden md:inline-block">Sign Up</Button>
+        <Button className="hidden md:inline-block">Search</Button>
       </div>
 
       {/* Mobile menu button */}

@@ -27,7 +27,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ article }) => {
       <div className="relative h-64 md:h-48 lg:h-56 xl:h-80 mb-4">
         <Image
           src={
-            "/fimg.png"
+            "/fimg.webp"
           }
           alt={"add poster"}
           fill
