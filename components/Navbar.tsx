@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/logo7.png"
+            src="/logofinal.png"
             alt="Logo"
             height={100}
             width={130}
@@ -120,6 +120,13 @@ const Navbar: React.FC = () => {
               <Link href="/docs" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Home
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/category" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Categories
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>

@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import NewsLetter from "@/components/NewsLetter";
 import OnlineVideos from "@/components/OnlineVideos";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 export default function Home() {
   const loksewaArticles = [
@@ -78,7 +79,7 @@ export default function Home() {
     shortDescription:
       "In the wake of mounting environmental concerns and escalating climate crises, the Global Climate Summit 2024 emerges as a beacon of hope, bringing together world leaders, activists, and experts to confront the pressing challenges facing our planet. As discussions unfold and commitments are made, the summit serves as a pivotal moment in our collective journey towards a more sustainable and resilient future. From groundbreaking innovations to collaborative initiatives, the summit sets the stage for bold action and transformative change, underscoring the urgency of addressing climate change and safeguarding the health of our planet for generations to come.",
     descriptionLength: 350,
-    tags: ["Technology", "Environment"],
+    tags: ["Featured"],
     featuredImageUrl: "https://via.placeholder.com/800x400",
   };
   return (
@@ -87,10 +88,10 @@ export default function Home() {
       <div>
         <h2 className="text-2xl font-bold text-slate-700 mt-6 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
           Recent Articles
-          <span className="text-sm text-center text-slate-500 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
+          <Link href={"/category"} className="text-sm text-center text-slate-500 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
             All articles{" "}
             <ChevronDoubleRightIcon className="h-4 w-4 inline-block" />
-          </span>
+          </Link>
         </h2>
         <ArticleLists loksewaArticles={loksewaArticles} />
       </div>

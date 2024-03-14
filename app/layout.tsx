@@ -28,7 +28,6 @@ export default function RootLayout({
         )}
       >
         <Navbar />
-        <MenuBar/>
         {children}
         <ScrollTop/>
         {/* <Footer /> */}
