@@ -58,7 +58,7 @@ const BlogCardWithImage: React.FC<IBlogCardProps> = ({
         </div>
       )}
       <Link
-        href={`/article/${article.title.toLowerCase().replace(/\s+/g, "-")}`}
+        href={`/category/article/${article.title.toLowerCase().replace(/\s+/g, "-")}`}
       >
         <h1 className="text-xl md:text-2xl text-slate-600 font-bold hover:decoration-2 hover:underline hover:cursor-pointer hover:decoration-primary">
           {article.title}
