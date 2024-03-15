@@ -37,6 +37,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ChevronDoubleLeftIcon } from "@heroicons/react/24/outline";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -116,7 +117,9 @@ const Navbar: React.FC = () => {
           quality={100}
           className="p-1"
         />
-        <span className="text-sm font-bold tracking-tight">Nepal Information Hub</span>
+        <span className="text-sm font-bold tracking-tight">
+          Nepal Information Hub
+        </span>
       </Link>
       <NavigationMenu className="hidden md:inline-block">
         <NavigationMenuList>
@@ -227,7 +230,7 @@ const Navbar: React.FC = () => {
             </Command>
           </PopoverContent>
         </Popover>
-        <Button  size="icon">
+        <Button size="icon">
           <MagnifyingGlassIcon className="h-4 w-4" />
         </Button>
       </div>
@@ -281,46 +284,36 @@ const Navbar: React.FC = () => {
 
       {/* Mobile menu, slide from the left */}
       <div
-        className={`fixed top-0 left-0 w-72 h-full bg-gray-100 transform z-[100] ${
+        className={`fixed top-0 left-0 w-full h-full bg-slate-50 transform z-[100] ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-40`}
       >
-        <div className="flex flex-col items-start justify-center h-24 border-b border-white p-4">
+        <div className="flex  items-center justify-between h-24 border-b border-white p-4 bg-white">
           {/* Brand */}
-          <Image
-            src="/logofinal.svg"
-            alt="Logo"
-            height={100}
-            width={80}
-            quality={100}
-          />
-          <span className="text-sm font-bold tracking-tight">Nepal Information Hub</span>
-          
-          {/* <button
+          <div className="flex flex-col">
+            <Image
+              src="/logofinal.svg"
+              alt="Logo"
+              height={100}
+              width={80}
+              quality={100}
+            />
+            <span className="text-sm font-bold tracking-tight">
+              Nepal Information Hub
+            </span>
+          </div>
+
+          <Button
             onClick={() => setIsOpen(false)}
-            type="button"
-            className="bg-white text-gray-800 inline-flex items-center justify-center p-3 rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300"
+            variant={"outline"}
+            className="bg-slate-50 text-gray-700 inline-flex items-center justify-center p-4 rounded-md hover:text-gray-500"
             aria-label="Close menu"
           >
-            <svg
-              className="block h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button> */}
+            <ChevronDoubleLeftIcon className="w-4 h-4 text-slate-500" />
+          </Button>
         </div>
         {/* Navigation links for mobile */}
-        <div className="px-4 pt-2 pb-3 space-y-2 flex flex-col justify-center items-start">
+        <div className="p-4 space-y-2 flex flex-col justify-center items-start bg-white">
           <Link href="/" className="text-sm font-medium border-b w-full py-3">
             Home
           </Link>
@@ -346,6 +339,75 @@ const Navbar: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+        <div className="p-4">
+          <ul className="grid grid-cols-2 gap-4 font-medium">
+            <li>Privacy Policy</li>
+            <li>About</li>
+            <li>Contact Us</li>
+            <li>Terms & Conditions</li>
+          </ul>
+        </div>
+        <div className="p-4">
+          <h1 className="text-lg font-bold mb-4">Follow Us</h1>
+          <ul className="flex items-center justify-start space-x-4">
+            <li>
+              <Image
+                src={"/fb.svg"}
+                alt="Facebook Icon"
+                width={30}
+                height={30}
+              />
+            </li>
+            <li>
+              <Image
+                src={"/insta.svg"}
+                alt="Facebook Icon"
+                width={30}
+                height={30}
+              />
+            </li>
+            <li>
+              <Image
+                src={"/twt.svg"}
+                alt="Facebook Icon"
+                width={30}
+                height={30}
+              />
+            </li>
+            <li>
+              <Image
+                src={"/link.svg"}
+                alt="Facebook Icon"
+                width={30}
+                height={30}
+              />
+            </li>
+            <li>
+              <Image
+                src={"/whatsapp.svg"}
+                alt="Facebook Icon"
+                width={30}
+                height={30}
+              />
+            </li>
+            <li>
+              <Image
+                src={"/tel.svg"}
+                alt="Facebook Icon"
+                width={30}
+                height={30}
+              />
+            </li>
+            <li>
+              <Image
+                src={"/yt.svg"}
+                alt="Facebook Icon"
+                width={30}
+                height={30}
+              />
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

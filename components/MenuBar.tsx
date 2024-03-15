@@ -32,8 +32,8 @@ const MenuBar: React.FC = () => {
       ),
     },
     {
-      name: "Article",
-      slug: "category/article",
+      name: "Study",
+      slug: "category/study",
       icon: (
         <BookOpenIcon
           className={`h-7 w-7 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white ${
