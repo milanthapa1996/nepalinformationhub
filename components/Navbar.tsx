@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center h-28">
+    <nav className="flex justify-between items-center h-28 z-50">
       {/* Menu items for larger screens */}
       <Link href="/">
         <Image
