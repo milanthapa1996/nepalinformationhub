@@ -152,7 +152,7 @@ const MenuBar: React.FC = () => {
   };
 
   return (
-    <div className="border-b border-slate-200 pb-1 sticky inset-0  bg-white">
+    <div className="border-b border-slate-200 py-2 bg-white">
       <div className="flex items-center justify-between">
         <button onClick={handlePrev} className="mr-2">
           <ChevronDoubleLeftIcon className="h-8 w-8 bg-slate-100 hover:bg-slate-200 p-2 rounded-sm" />

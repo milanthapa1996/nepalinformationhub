@@ -33,11 +33,11 @@ const page = () => {
       <div className="flex flex-col md:flex-row md:justify-between py-4 mb-12">
         <div className="max-w-screen-sm mx-auto">
                   {/* Table of contents */}
-        <div className="mb-4 md:mb-0 w-48">
-          <Accordion type="single" collapsible className="w-full">
+        <div className="mb-4 md:mb-0 w-1/3">
+          <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger className="bg-slate-100 p-2 border border-slate-700 rounded-md shadow-sm">
-                <h3 className="font-semibold tracking-tight text-gray-600 text-lg ">
+              <AccordionTrigger className="bg-slate-100 px-1 py-2 rounded-md">
+                <h3 className="font-semibold tracking-tight text-gray-500 text-sm">
                   Table of Contents
                 </h3>
               </AccordionTrigger>
