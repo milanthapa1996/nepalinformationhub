@@ -1,4 +1,5 @@
 import ArticleLists from "@/components/ArticleLists";
+import ArticleSlider from "@/components/ArticleSlider";
 import BlogSection from "@/components/BlogSection";
 import Categories from "@/components/Categories";
 import HeroSection from "@/components/HeroSection";
@@ -36,7 +37,8 @@ export default function Home() {
       shortDescription:
         "Renewable energy sources such as solar, wind, and hydroelectric power are increasingly being recognized as key components of a sustainable energy future. This article explores recent advancements in renewable energy technologies and their potential to revolutionize the global energy landscape.",
       tags: ["Technology", "Environment", "Renewable"],
-      featuredImageUrl: "https://cdn.pixabay.com/photo/2013/06/07/09/59/cape-ortegal-117601_640.jpg",
+      featuredImageUrl:
+        "https://cdn.pixabay.com/photo/2013/06/07/09/59/cape-ortegal-117601_640.jpg",
     },
     {
       id: 3,
@@ -50,7 +52,8 @@ export default function Home() {
       shortDescription:
         "As concerns over air pollution and climate change escalate, electric vehicles (EVs) have emerged as a promising solution to reduce greenhouse gas emissions from the transportation sector. This article explores the growing popularity of EVs, advancements in battery technology, and the potential impact on the automotive industry.",
       tags: ["Technology", "Environment", "Electric"],
-      featuredImageUrl: "https://cdn.pixabay.com/photo/2022/01/16/23/15/car-6943487_640.jpg",
+      featuredImageUrl:
+        "https://cdn.pixabay.com/photo/2022/01/16/23/15/car-6943487_640.jpg",
     },
     {
       id: 4,
@@ -64,7 +67,8 @@ export default function Home() {
       shortDescription:
         "As the global population continues to grow, the demand for food is increasing exponentially. Sustainable agriculture practices aim to meet this demand while minimizing environmental impact and preserving natural resources for future generations. This article examines innovative farming techniques, agroecological principles, and the importance of biodiversity in ensuring food security and environmental sustainability.",
       tags: ["Environment", "Sustainability", "Agriculture"],
-      featuredImageUrl: "https://cdn.pixabay.com/photo/2015/07/05/12/03/grain-832194_640.jpg",
+      featuredImageUrl:
+        "https://cdn.pixabay.com/photo/2015/07/05/12/03/grain-832194_640.jpg",
     },
   ];
   const recentArticle = {
@@ -84,19 +88,10 @@ export default function Home() {
   };
   return (
     <main>
-      <HeroSection article={recentArticle} />
-      <div>
-        <h2 className="text-2xl font-bold text-slate-700 mt-6 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
-          Recent Articles
-          <Link href={"/category"} className="text-sm text-center text-slate-500 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
-            All articles{" "}
-            <ChevronDoubleRightIcon className="h-4 w-4 inline-block" />
-          </Link>
-        </h2>
-        <ArticleLists loksewaArticles={loksewaArticles} />
-      </div>
+      <HeroSection />
+      <ArticleSlider/>
       <Categories />
-      <OnlineVideos/>
+      <OnlineVideos />
       <div className="mb-24">
         <h2 className="text-2xl font-bold text-slate-700 mt-6 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
           Latest Blogs
@@ -107,7 +102,7 @@ export default function Home() {
         </h2>
         <BlogSection loksewaArticles={loksewaArticles} />
       </div>
-      <NewsLetter/>
+      <NewsLetter />
     </main>
   );
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import ScrollTop from "@/components/ScrollTop";
+import { TopBar } from "@/components/TopBar";
 // import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,10 +23,11 @@ export default function RootLayout({
     <html lang="en" className="light">
       <body
         className={cn(
-          "min-h-screen font-sans antialiased  max-w-6xl mx-auto px-4",
+          "max-w-7xl mx-auto px-4",
           inter.className
         )}
       >
+        <TopBar/>
         <Navbar />
         {children}
         <ScrollTop/>
