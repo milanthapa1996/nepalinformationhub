@@ -3,10 +3,10 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="pb-28 relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')]">
+    <section className="pb-24 relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')]">
       <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
         <div className="flex justify-center">
-          <span className="inline-flex items-center gap-x-6 bg-white border border-gray-200 text-sm text-gray-800 p-1 ps-3 rounded-full transition hover:border-gray-300  cursor-pointer">
+          <span className="inline-flex items-center gap-x-6 bg-white border border-gray-200 text-sm text-gray-500 p-1 ps-3 rounded-full transition hover:border-gray-300  cursor-pointer">
             Search your interest...
             <span className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-gray-200 font-semibold text-sm text-gray-600">
               <svg
@@ -35,7 +35,7 @@ const HeroSection = () => {
         </div>
 
         <div className="mt-5 max-w-3xl text-center mx-auto">
-          <p className="text-sm md:text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-sm md:text-lg text-gray-600">
             Discover a world of learning without limits at Nepal Information
             Hub. Start your journey to knowledge and growth today with Nepal
             Information Hub!

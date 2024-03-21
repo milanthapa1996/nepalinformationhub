@@ -1,5 +1,5 @@
 import ArticleLists from "@/components/ArticleLists";
-import ArticleSlider from "@/components/ArticleSlider";
+import FeaturedCategory from "@/components/FeaturedCategory";
 import BlogSection from "@/components/BlogSection";
 import Categories from "@/components/Categories";
 import HeroSection from "@/components/HeroSection";
@@ -7,6 +7,7 @@ import NewsLetter from "@/components/NewsLetter";
 import OnlineVideos from "@/components/OnlineVideos";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import TopCourses from "@/components/TopCourses";
 
 export default function Home() {
   const loksewaArticles = [
@@ -89,7 +90,8 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <ArticleSlider/>
+      <FeaturedCategory/>
+      <TopCourses/>
       <Categories />
       <OnlineVideos />
       <div className="mb-24">
