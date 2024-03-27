@@ -1,5 +1,3 @@
-import MenuBar from "@/components/MenuBar";
-
 export default function CategoryLayout({
   children,
 }: {
@@ -7,7 +5,6 @@ export default function CategoryLayout({
 }) {
   return (
     <section>
-      <MenuBar />
       {children}
     </section>
   );

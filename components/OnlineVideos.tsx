@@ -5,6 +5,7 @@ import {
   ChevronDoubleRightIcon,
   PlayCircleIcon,
 } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
 
 interface Course {
   title: string;
@@ -65,13 +66,16 @@ const onlineCourses: Course[] = [
 const OnlineVideos: React.FC = () => {
   return (
     <section className="mb-24">
-      <h2 className="text-2xl font-bold text-slate-700 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
-        Explore Online Videos
+      <h2 className="text-xl md:text-3xl font-bold text-slate-700 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
+        Explre Online Videos
         <span className="text-sm text-center text-slate-500 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
-          All videos{" "}
-          <ChevronDoubleRightIcon className="h-4 w-4 inline-block" />
+          View all <ChevronRightIcon className="h-4 w-4 inline-block" />
         </span>
       </h2>
+      <p className="text-xs md:text-sm mt-2 font-medium text-slate-500 pl-5">
+        Explore Our World: Dive into Diverse Learning Categories at Nepal
+        Information Hub!
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {onlineCourses.map((course, index) => (
           <Link href={`/courses/${index}`} key={index}>

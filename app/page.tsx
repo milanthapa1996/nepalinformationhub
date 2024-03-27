@@ -1,13 +1,11 @@
-import ArticleLists from "@/components/ArticleLists";
-import FeaturedCategory from "@/components/FeaturedCategory";
+import FeaturedCourses from "@/components/FeaturedCourses";
 import BlogSection from "@/components/BlogSection";
 import Categories from "@/components/Categories";
 import HeroSection from "@/components/HeroSection";
 import NewsLetter from "@/components/NewsLetter";
 import OnlineVideos from "@/components/OnlineVideos";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
-import TopCourses from "@/components/TopCourses";
+import TopArticles from "@/components/TopArticles";
 
 export default function Home() {
   const loksewaArticles = [
@@ -72,26 +70,12 @@ export default function Home() {
         "https://cdn.pixabay.com/photo/2015/07/05/12/03/grain-832194_640.jpg",
     },
   ];
-  const recentArticle = {
-    id: 1,
-    title:
-      "Global Climate Summit 2024: Charting a Path Towards Sustainable Future",
-    authorFirstName: "John",
-    authorLastName: "Doe",
-    authorAvatarUrl:
-      "https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_640.jpg",
-    createdAt: new Date(),
-    shortDescription:
-      "In the wake of mounting environmental concerns and escalating climate crises, the Global Climate Summit 2024 emerges as a beacon of hope, bringing together world leaders, activists, and experts to confront the pressing challenges facing our planet. As discussions unfold and commitments are made, the summit serves as a pivotal moment in our collective journey towards a more sustainable and resilient future. From groundbreaking innovations to collaborative initiatives, the summit sets the stage for bold action and transformative change, underscoring the urgency of addressing climate change and safeguarding the health of our planet for generations to come.",
-    descriptionLength: 350,
-    tags: ["Featured"],
-    featuredImageUrl: "https://via.placeholder.com/800x400",
-  };
+
   return (
-    <main>
+    <main className="max-w-7xl mx-auto px-4">
       <HeroSection />
-      <FeaturedCategory/>
-      <TopCourses/>
+      <FeaturedCourses/>
+      <TopArticles/>
       <Categories />
       <OnlineVideos />
       <div className="mb-24">

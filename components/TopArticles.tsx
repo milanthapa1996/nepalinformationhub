@@ -2,7 +2,7 @@ import { ChevronRightIcon } from "@radix-ui/react-icons";
 import React from "react";
 import ArticleCard from "./ArticleCard";
 
-const TopCourses = () => {
+const TopArticles = () => {
     const data = [
         {
           category: "Study",
@@ -58,7 +58,7 @@ const TopCourses = () => {
   return (
     <section className="min-h-screen">
       <h2 className="text-xl md:text-3xl font-bold text-slate-700 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
-        Our Top Courses
+        Our Top Articles
         <span className="text-sm text-center text-slate-500 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
           View all <ChevronRightIcon className="h-4 w-4 inline-block" />
         </span>
@@ -73,4 +73,4 @@ const TopCourses = () => {
   );
 };
 
-export default TopCourses;
+export default TopArticles;

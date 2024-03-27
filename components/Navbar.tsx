@@ -12,13 +12,13 @@ import {
 import {
   HamburgerMenuIcon,
   Cross1Icon,
-  ArrowRightIcon,
+  ChatBubbleIcon,
 } from "@radix-ui/react-icons";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="flex justify-between items-center h-20 max-w-7xl mx-auto sticky inset-0 z-50 bg-white border-b border-slate-100">
+    <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center h-20 sticky inset-0 z-50 bg-white border-b border-slate-100">
       {/* Menu items for larger screens */}
       <Link href="/">
         <Image
@@ -38,14 +38,11 @@ const Navbar = () => {
           <Link href={"/#about"}>
             <li>About</li>
           </Link>
-          <Link href={"/#services"}>
-            <li>Services</li>
+          <Link href={"/courses"}>
+            <li>Courses</li>
           </Link>
-          <Link href={"/#gallery"}>
-            <li>Gallery</li>
-          </Link>
-          <Link href={"/#teams"}>
-            <li>Teams</li>
+          <Link href={"/articles"}>
+            <li>Articles</li>
           </Link>
           <Link href={"/#contact-us"}>
             <li>Contact Us</li>
@@ -54,23 +51,15 @@ const Navbar = () => {
       </div>
       <div className="hidden md:flex  space-x-4 items-center">
         <Link href={"/"}>
-          <span className="group cursor-pointer inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 border border-transparent text-white text-sm font-medium rounded-md focus:outline-none focus:ring-1 focus:ring-gray-600 py-3 px-4">
-            Get started
-            <svg
-              className="flex-shrink-0 size-4 group-hover:translate-x-1 duration-300"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </span>
+        <button
+            type="button"
+            className="relative group p-1 ps-3 inline-flex items-center gap-x-2 text-sm font-mono rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+          >
+            Contact Us
+            <span className="flex justify-center items-center bg-gray-200 rounded-md size-7 dark:bg-gray-700 dark:text-gray-400">
+              <ChatBubbleIcon className="h-4 w-4" />
+            </span>
+          </button>
         </Link>
       </div>
 

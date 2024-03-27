@@ -22,14 +22,14 @@ interface CardProps {
 }
 const ArticleCard: React.FC<CardProps> = ({ data }) => {
   return (
-    <div className="max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border border-gray-200">
+    <div className="max-w-sm overflow-hidden bg-white rounded-lg shadow-lg border border-gray-200 group">
       <Link href={"/category/study/loksewa"}>
         <div className="relative h-44 group">
           <Image
             src={data.imageUrl}
             alt={data.title}
             fill
-            className="object-cover"
+            className="object-cover group-hover:scale-105 duration-300"
             quality={100}
           />
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-20"></div>
@@ -61,9 +61,9 @@ const ArticleCard: React.FC<CardProps> = ({ data }) => {
             </span>
           </div>
         </div>
-        <h1 className="text-lg font-medium text-gray-600 mt-2 ">{data.title}</h1>
+        <h1 className="font-medium text-gray-600 mt-2">{data.title}</h1>
         <Link href={"/category/study/loksewa"}>
-          <Button className="mt-4 w-full" variant={"outline"} size={"sm"}>
+          <Button className="mt-4 w-full" variant={"outline"} size={"lg"}>
             View
           </Button>
         </Link>

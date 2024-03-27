@@ -1,74 +1,215 @@
-import { ChatBubbleIcon } from "@radix-ui/react-icons";
+"use client";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import {
+  EnvelopeClosedIcon,
+  FaceIcon,
+  GearIcon,
+  MagnifyingGlassIcon,
+  PersonIcon,
+  RocketIcon,
+} from "@radix-ui/react-icons";
+import {
+  BookOpenIcon,
+  NewspaperIcon,
+  AcademicCapIcon,
+  VideoCameraIcon,
+  BriefcaseIcon,
+  PencilSquareIcon,
+  LightBulbIcon,
+  StarIcon,
+  CalendarIcon,
+} from "@heroicons/react/24/outline";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command";
 
 const HeroSection = () => {
+  const [open, setOpen] = React.useState(false);
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "f" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    };
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+  const categories = [
+    {
+      name: "All",
+      slug: "category/",
+      icon: (
+        <StarIcon
+          className={`h-7 w-7 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
+        />
+      ),
+    },
+    {
+      name: "Loksewa",
+      slug: "category/study",
+      icon: (
+        <Image
+          src="/loksewaicon.png"
+          alt="Loksewa Icon"
+          width={30}
+          height={24}
+          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        />
+      ),
+    },
+    {
+      name: "Quiz",
+      slug: "category/quiz",
+      icon: (
+        <Image
+          src="/loksewaicon.png"
+          alt="Loksewa Icon"
+          width={30}
+          height={24}
+          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        />
+      ),
+    },
+    {
+      name: "Video",
+      slug: "category/video",
+      icon: (
+        <Image
+          src="/loksewaicon.png"
+          alt="Loksewa Icon"
+          width={30}
+          height={24}
+          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        />
+      ),
+    },
+    {
+      name: "Vacancy",
+      slug: "category/job",
+      icon: (
+        <Image
+          src="/loksewaicon.png"
+          alt="Loksewa Icon"
+          width={30}
+          height={24}
+          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        />
+      ),
+    },
+    {
+      name: "Blog",
+      slug: "category/blog",
+      icon: (
+        <Image
+          src="/loksewaicon.png"
+          alt="Loksewa Icon"
+          width={30}
+          height={24}
+          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        />
+      ),
+    }
+  ];
   return (
-    <section className="pb-24 relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')]">
-      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-        <div className="flex justify-center">
-          <span className="inline-flex items-center gap-x-6 bg-white border border-gray-200 text-sm text-gray-500 p-1 ps-3 rounded-full transition hover:border-gray-300  cursor-pointer">
-            Search your interest...
-            <span className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-gray-200 font-semibold text-sm text-gray-600">
-              <svg
-                className="flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </span>
+    <section className="min-h-screen flex flex-col md:flex-row mb-6 lg:mb-0">
+      <div className="w-full flex items-start pt-12 justify-center">
+        <Image
+          src={"/heroicon.png"}
+          alt="Hero image"
+          width={600}
+          height={300}
+        />
+      </div>
+      <div className="w-full flex flex-col items-start pt-4 lg:pt-24 space-y-6">
+        <h1 className="text-2xl lg:text-4xl font-bold">
+          Find your next course.
+        </h1>
+        <Button
+          className="flex justify-between h-14 w-[90%] rounded-full text-slate-500 shadow-md shadow-slate-400"
+          variant={"outline"}
+          onClick={() => setOpen(true)}
+        >
+          <span className="flex items-center">
+            <MagnifyingGlassIcon className="h-6 w-6 mr-2" />
+            Search Courses...
           </span>
-        </div>
-        <div className="mt-5 max-w-2xl text-center mx-auto">
-          <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-gray-200">
-            <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">
-              Nepal Information Hub
-            </span>
-          </h1>
-        </div>
-
-        <div className="mt-5 max-w-3xl text-center mx-auto">
-          <p className="text-sm md:text-lg text-gray-600">
-            Discover a world of learning without limits at Nepal Information
-            Hub. Start your journey to knowledge and growth today with Nepal
-            Information Hub!
+          <p className="text-sm text-muted-foreground ml-6">
+            <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+              <span className="text-xs">Ctrl + F</span>
+            </kbd>
           </p>
-        </div>
-
-        <div className="mt-8 gap-3 flex justify-center">
-          <span className="group cursor-pointer inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 border border-transparent text-white text-sm font-medium rounded-md focus:outline-none focus:ring-1 focus:ring-gray-600 py-3 px-4">
-            Get started
-            <svg
-              className="flex-shrink-0 size-4 group-hover:translate-x-1 duration-300"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </span>
-          <button
-            type="button"
-            className="relative group p-2 ps-3 inline-flex items-center gap-x-2 text-sm font-mono rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          >
-            Contact Us
-            <span className="flex justify-center items-center bg-gray-200 rounded-md size-7 dark:bg-gray-700 dark:text-gray-400">
-              <ChatBubbleIcon className="h-4 w-4" />
-            </span>
-          </button>
+        </Button>
+        <p className=" italic font-medium text-slate-500">
+          ** Or browse by subject or university
+        </p>
+        <CommandDialog open={open} onOpenChange={setOpen}>
+          <CommandInput placeholder="Type a command or search..." />
+          <CommandList>
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandGroup heading="Suggestions">
+              <CommandItem>
+                <CalendarIcon className="mr-2 h-4 w-4" />
+                <span>Calendar</span>
+              </CommandItem>
+              <CommandItem>
+                <FaceIcon className="mr-2 h-4 w-4" />
+                <span>Search Emoji</span>
+              </CommandItem>
+              <CommandItem>
+                <RocketIcon className="mr-2 h-4 w-4" />
+                <span>Launch</span>
+              </CommandItem>
+            </CommandGroup>
+            <CommandSeparator />
+            <CommandGroup heading="Settings">
+              <CommandItem>
+                <PersonIcon className="mr-2 h-4 w-4" />
+                <span>Profile</span>
+                <CommandShortcut>⌘P</CommandShortcut>
+              </CommandItem>
+              <CommandItem>
+                <EnvelopeClosedIcon className="mr-2 h-4 w-4" />
+                <span>Mail</span>
+                <CommandShortcut>⌘B</CommandShortcut>
+              </CommandItem>
+              <CommandItem>
+                <GearIcon className="mr-2 h-4 w-4" />
+                <span>Settings</span>
+                <CommandShortcut>⌘S</CommandShortcut>
+              </CommandItem>
+            </CommandGroup>
+          </CommandList>
+        </CommandDialog>
+        <div>
+          <h2 className="font-bold text-slate-700 text-lg mb-2">
+            Popular courses
+          </h2>
+          <ul className="flex items-start gap-4 flex-wrap max-w-md">
+            {categories.map((category, index) => (
+              <Link key={index} href={`/${category.slug}`}>
+                <li
+                  className={`border border-gray-300 rounded-xl px-2 py-1 flex items-center group hover:bg-slate-200 `}
+                >
+                  <div className="rounded-full text-xs md:text-base ">
+                    {category.icon}
+                  </div>
+                  <span className="text-xs md:text-base">{category.name}</span>
+                </li>
+              </Link>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

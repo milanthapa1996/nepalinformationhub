@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { ClockIcon } from "@radix-ui/react-icons";
-import Image from "next/image";
 
 export const TopBar = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -30,7 +28,6 @@ export const TopBar = () => {
   return (
     <div className="h-6 max-w-7xl mx-auto flex items-center justify-between ">
       <div className="flex items-center text-xs font-medium text-slate-700">
-        <ClockIcon className="h-4 w-4 mr-2" />
         <span suppressHydrationWarning>
           {dayOfWeek} | {date} | {time}
         </span>

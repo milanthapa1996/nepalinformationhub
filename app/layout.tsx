@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className="light">
       <body
         className={cn(
-          "max-w-7xl mx-auto px-4",
+          "",
           inter.className
         )}
       >
