@@ -10,15 +10,15 @@ import {
   RocketIcon,
 } from "@radix-ui/react-icons";
 import {
+  StarIcon,
+  CalendarIcon,
   BookOpenIcon,
-  NewspaperIcon,
+  LightBulbIcon,
   AcademicCapIcon,
   VideoCameraIcon,
   BriefcaseIcon,
   PencilSquareIcon,
-  LightBulbIcon,
-  StarIcon,
-  CalendarIcon,
+  NewspaperIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -49,78 +49,94 @@ const HeroSection = () => {
   const categories = [
     {
       name: "All",
-      slug: "category/",
+      value: "all",
       icon: (
         <StarIcon
-          className={`h-7 w-7 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white `}
         />
       ),
     },
     {
       name: "Loksewa",
-      slug: "category/study",
+      value: "loksewa",
       icon: (
-        <Image
-          src="/loksewaicon.png"
-          alt="Loksewa Icon"
-          width={30}
-          height={24}
-          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        <BookOpenIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
         />
       ),
     },
     {
-      name: "Quiz",
-      slug: "category/quiz",
+      name: "Teacher sewa",
+      value: "tsc",
       icon: (
-        <Image
-          src="/loksewaicon.png"
-          alt="Loksewa Icon"
-          width={30}
-          height={24}
-          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        <LightBulbIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white `}
         />
       ),
     },
     {
-      name: "Video",
-      slug: "category/video",
+      name: "NRB",
+      value: "nrb",
       icon: (
-        <Image
-          src="/loksewaicon.png"
-          alt="Loksewa Icon"
-          width={30}
-          height={24}
-          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        <AcademicCapIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
         />
       ),
     },
     {
-      name: "Vacancy",
-      slug: "category/job",
+      name: "CAAN",
+      value: "caan",
       icon: (
-        <Image
-          src="/loksewaicon.png"
-          alt="Loksewa Icon"
-          width={30}
-          height={24}
-          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        <VideoCameraIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
         />
       ),
     },
     {
-      name: "Blog",
-      slug: "category/blog",
+      name: "NTC",
+      value: "ntc",
       icon: (
-        <Image
-          src="/loksewaicon.png"
-          alt="Loksewa Icon"
-          width={30}
-          height={24}
-          className={`mr-2 border rounded-full border-gray-300 group-hover:bg-white `}
+        <BriefcaseIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
         />
       ),
-    }
+    },
+    {
+      name: "NEA",
+      value: "nea",
+      icon: (
+        <PencilSquareIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white `}
+        />
+      ),
+    },
+    {
+      name: "Nepal Oil Corporation",
+      value: "noc",
+      icon: (
+        <NewspaperIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
+        />
+      ),
+    },
+    {
+      name: "Nepal Army",
+      value: "nparmy",
+      icon: (
+        <NewspaperIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
+        />
+      ),
+    },
+    {
+      name: "APF",
+      value: "apf",
+      icon: (
+        <NewspaperIcon
+          className={`h-6 w-6 mr-2 border p-1 rounded-full border-gray-300 group-hover:bg-white`}
+        />
+      ),
+    },
   ];
   return (
     <section className="min-h-screen flex flex-col md:flex-row mb-6 lg:mb-0">
@@ -137,13 +153,13 @@ const HeroSection = () => {
           Find your next course.
         </h1>
         <Button
-          className="flex justify-between h-14 w-[90%] rounded-full text-slate-500 shadow-md shadow-slate-400"
+          className="flex justify-between h-12 lg:h-14 w-[90%] rounded-full text-slate-500 hover:text-slate-500 shadow-md shadow-slate-400 hover:scale-105 duration-300 transition-all"
           variant={"outline"}
           onClick={() => setOpen(true)}
         >
           <span className="flex items-center">
             <MagnifyingGlassIcon className="h-6 w-6 mr-2" />
-            Search Courses...
+            Search your interest...
           </span>
           <p className="text-sm text-muted-foreground ml-6">
             <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
@@ -152,7 +168,7 @@ const HeroSection = () => {
           </p>
         </Button>
         <p className=" italic font-medium text-slate-500">
-          ** Or browse by subject or university
+          ** browse by courses or articles
         </p>
         <CommandDialog open={open} onOpenChange={setOpen}>
           <CommandInput placeholder="Type a command or search..." />
@@ -196,19 +212,19 @@ const HeroSection = () => {
           <h2 className="font-bold text-slate-700 text-lg mb-2">
             Popular courses
           </h2>
-          <ul className="flex items-start gap-4 flex-wrap max-w-md">
-            {categories.map((category, index) => (
-              <Link key={index} href={`/${category.slug}`}>
-                <li
-                  className={`border border-gray-300 rounded-xl px-2 py-1 flex items-center group hover:bg-slate-200 `}
-                >
-                  <div className="rounded-full text-xs md:text-base ">
-                    {category.icon}
-                  </div>
-                  <span className="text-xs md:text-base">{category.name}</span>
-                </li>
-              </Link>
-            ))}
+          <ul className="flex items-start gap-3 flex-wrap max-w-xl">
+          {categories.map((category, index) => (
+            <Button
+              key={index}
+              variant="outline"
+              className={`border border-gray-300 rounded-xl px-2 py-1 flex items-center group hover:bg-slate-200 hover:scale-105 duration-300 transition-all`}
+            >
+              <div className="rounded-full text-xs md:text-base ">
+                {category.icon}
+              </div>
+              <span className="text-xs text-slate-600">{category.name}</span>
+            </Button>
+          ))}
           </ul>
         </div>
       </div>

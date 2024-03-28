@@ -29,6 +29,9 @@ const Navbar = () => {
           quality={100}
           className="p-1"
         />
+        <span className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-gray-800">
+          Nepal Information Hub
+        </span>
       </Link>
       <div className="hidden md:inline-block">
         <ul className="flex items-center space-x-4 *:font-medium *:tracking-tight hover:*:bg-slate-100 *:px-2 *:py-1 *:rounded-lg *:cursor-pointer">
@@ -45,13 +48,13 @@ const Navbar = () => {
             <li>Articles</li>
           </Link>
           <Link href={"/#contact-us"}>
-            <li>Contact Us</li>
+            <li>Quizzes</li>
           </Link>
         </ul>
       </div>
       <div className="hidden md:flex  space-x-4 items-center">
         <Link href={"/"}>
-        <button
+          <button
             type="button"
             className="relative group p-1 ps-3 inline-flex items-center gap-x-2 text-sm font-mono rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
           >
@@ -82,6 +85,7 @@ const Navbar = () => {
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-40`}
       >
+        <div className="h-6 bg-white"></div>
         <div className="flex  items-center justify-between h-20 border-b border-white px-4 bg-white">
           {/* Brand */}
           <Link href="/">
@@ -93,6 +97,9 @@ const Navbar = () => {
               quality={100}
               className="p-1"
             />
+            <span className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-gray-800">
+              Nepal Information Hub
+            </span>
           </Link>
 
           <Button
@@ -125,32 +132,25 @@ const Navbar = () => {
             className="text-sm font-medium border-b w-full py-3"
             onClick={() => setIsOpen(false)}
           >
-            Services
+            Courses
           </Link>
           <Link
             href="/#gallery"
             className="text-sm font-medium border-b w-full py-3"
             onClick={() => setIsOpen(false)}
           >
-            Gallery
+            Articles
           </Link>
           <Link
             href="/#teams"
             className="text-sm font-medium border-b w-full py-3"
             onClick={() => setIsOpen(false)}
           >
-            Teams
-          </Link>
-          <Link
-            href="/#contact-us"
-            className="text-sm font-medium w-full py-3"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact Us
+            Quizzes
           </Link>
         </div>
         <div className="p-4">
-          <ul className="grid grid-cols-2 gap-4 font-medium">
+          <ul className="grid grid-cols-2 gap-x-4 font-medium">
             <Link
               href="/privacy-policy"
               className="text-sm font-medium w-full py-3"

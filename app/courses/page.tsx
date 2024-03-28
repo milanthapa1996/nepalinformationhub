@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import ArticleCard from "@/components/ArticleCard";
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -16,6 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import CourseCard from "@/components/CourseCard";
 
 const frameworks = [
   {
@@ -104,14 +104,14 @@ const page = () => {
                 {value
                   ? frameworks.find((framework) => framework.value === value)
                       ?.label
-                  : "Select Courses..."}
+                  : "Select Categories..."}
                 <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-[250px] p-0">
               <Command>
                 <CommandInput
-                  placeholder="Search Courses..."
+                  placeholder="Search Categories..."
                   className="h-9"
                 />
                 <CommandEmpty>No framework found.</CommandEmpty>
@@ -143,7 +143,7 @@ const page = () => {
         </h1>
         <div className="my-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {data.map((item, index) => (
-            <ArticleCard key={index} data={item} />
+            <CourseCard key={index} data={item} />
           ))}
         </div>
       </div>

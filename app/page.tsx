@@ -1,4 +1,3 @@
-import FeaturedCourses from "@/components/FeaturedCourses";
 import BlogSection from "@/components/BlogSection";
 import Categories from "@/components/Categories";
 import HeroSection from "@/components/HeroSection";
@@ -6,6 +5,9 @@ import NewsLetter from "@/components/NewsLetter";
 import OnlineVideos from "@/components/OnlineVideos";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 import TopArticles from "@/components/TopArticles";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
+import CourseCard from "@/components/CourseCard";
+import Link from "next/link";
 
 export default function Home() {
   const loksewaArticles = [
@@ -70,12 +72,82 @@ export default function Home() {
         "https://cdn.pixabay.com/photo/2015/07/05/12/03/grain-832194_640.jpg",
     },
   ];
+  const data = [
+    {
+      category: "Study",
+      title: "Gk: Chapter 1",
+      course_name: "Section Officer (PSC)",
+      updated_date: "2021-08-3",
+      author: "Author 1",
+      imageUrl: "/Loksewa.png",
+      tags: ["study", "loksewa", "Gk"],
+      fee: "Free",
+    },
+    {
+      category: "Quiz",
+      title: "Playlist 1",
+      course_name: "Course Name 1",
+      updated_date: "2021-08-3",
+      author: "Author 3",
+      imageUrl: "/Loksewa.png",
+      tags: ["quiz", "tag 2", "Paid"],
+      fee: "150 NPR /-",
+    },
+    {
+      category: "Study",
+      title: "Loksewa",
+      course_name: "Section Officer",
+      author: "Author 1",
+      updated_date: "2021-08-3",
+      imageUrl: "/Loksewa.png",
+      tags: ["study", "loksewa", "Free"],
+      fee: "Free",
+    },
+    {
+      category: "Study",
+      title: "Loksewa",
+      course_name: "Section Officer",
+      updated_date: "2021-08-3",
+      author: "Author 1",
+      imageUrl: "/Loksewa.png",
+      tags: ["study", "loksewa", "Free"],
+      fee: "Free",
+    },
+    {
+      category: "Study",
+      title: "Loksewa",
+      course_name: "Section Officer",
+      updated_date: "2021-08-3",
+      author: "Author 1",
+      imageUrl: "/Loksewa.png",
+      tags: ["study", "loksewa", "Free"],
+      fee: "Free",
+    },
+  ];
 
   return (
     <main className="max-w-7xl mx-auto px-4">
       <HeroSection />
-      <FeaturedCourses/>
-      <TopArticles/>
+      <section className="min-h-screen py-12 lg:py-0">
+        <h2 className="text-xl md:text-3xl font-bold text-slate-700 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
+          Our Top Courses
+        </h2>
+        <p className="text-xs md:text-sm mt-2 font-medium text-slate-500 pl-5">
+          Explore Our World: Dive into Diverse Learning Categories at Nepal
+          Information Hub!
+        </p>
+        <div className="grid items-center space-y-4 py-16 md:grid-cols-2 gap-6 md:space-y-0 lg:grid-cols-4">
+          {data.map((item, index) => (
+            <CourseCard key={index} data={item} />
+          ))}
+        </div>
+        <Link href={"/courses"}>
+            <span className="text-sm lg:text-lg mt-8 font-semibold flex items-center justify-center text-slate-600 cursor-pointer hover:text-slate-700 hover:translate-x-1 duration-300">
+              View all <ChevronRightIcon className="h-4 w-4 inline-block" />
+            </span>
+          </Link>
+      </section>
+      <TopArticles />
       <Categories />
       <OnlineVideos />
       <div className="mb-24">

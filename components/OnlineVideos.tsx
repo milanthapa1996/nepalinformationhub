@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ChevronDoubleRightIcon,
   PlayCircleIcon,
 } from "@heroicons/react/24/solid";
 import { ChevronRightIcon } from "@radix-ui/react-icons";

@@ -56,10 +56,10 @@ const page = () => {
   ];
   return (
     <section className="max-w-7xl mx-auto px-4 py-8">
-      <h2 className="text-xl md:text-2xl font-bold text-slate-700 border-l-4 border-slate-600 pl-4 flex items-center justify-between">
-        Articles From ....
+      <h2 className="text-xl md:text-2xl font-bold text-slate-700 border-l-4 border-slate-600 pl-4">
+        Course:- <span className="text-slate-500">Loksewa</span>
       </h2>
-      <div className="grid items-center space-y-4 py-12 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4">
+      <div className="grid items-center space-y-4 py-8 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-3">
         {data.map((item, index) => (
           <ArticleCard key={index} data={item} />
         ))}
