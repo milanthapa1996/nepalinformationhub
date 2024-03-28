@@ -2,16 +2,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import {
-  EnvelopeClosedIcon,
-  FaceIcon,
-  GearIcon,
+  LayersIcon,
   MagnifyingGlassIcon,
-  PersonIcon,
-  RocketIcon,
+  FileTextIcon,
+  Pencil2Icon
 } from "@radix-ui/react-icons";
 import {
   StarIcon,
-  CalendarIcon,
   BookOpenIcon,
   LightBulbIcon,
   AcademicCapIcon,
@@ -171,39 +168,39 @@ const HeroSection = () => {
           ** browse by courses or articles
         </p>
         <CommandDialog open={open} onOpenChange={setOpen}>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="Search Courses or Articles ..." />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Suggestions">
+            <CommandGroup heading="Courses">
               <CommandItem>
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                <span>Calendar</span>
+                <LayersIcon className="mr-2 h-2 w-2" />
+                <Link href={"/courses"}>
+                  <span className="text-xs font-medium text-slate-700">
+                    All Courses
+                  </span>
+                </Link>
               </CommandItem>
               <CommandItem>
-                <FaceIcon className="mr-2 h-4 w-4" />
-                <span>Search Emoji</span>
-              </CommandItem>
-              <CommandItem>
-                <RocketIcon className="mr-2 h-4 w-4" />
-                <span>Launch</span>
+                <LayersIcon className="mr-2 h-2 w-2" />
+                <Link href={"/courses"}>
+                  <span className="text-xs font-medium text-slate-700">
+                    Section Officer
+                  </span>
+                </Link>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Settings">
+            <CommandGroup heading="Articles">
               <CommandItem>
-                <PersonIcon className="mr-2 h-4 w-4" />
-                <span>Profile</span>
-                <CommandShortcut>⌘P</CommandShortcut>
+                <FileTextIcon className="mr-2 h-2 w-2" />
+                <span className="text-xs font-medium text-slate-700">Introduction to history</span>
               </CommandItem>
+            </CommandGroup>
+            <CommandSeparator />
+            <CommandGroup heading="Quizzes">
               <CommandItem>
-                <EnvelopeClosedIcon className="mr-2 h-4 w-4" />
-                <span>Mail</span>
-                <CommandShortcut>⌘B</CommandShortcut>
-              </CommandItem>
-              <CommandItem>
-                <GearIcon className="mr-2 h-4 w-4" />
-                <span>Settings</span>
-                <CommandShortcut>⌘S</CommandShortcut>
+                <Pencil2Icon className="mr-2 h-2 w-2" />
+                <span className="text-xs font-medium text-slate-700">Section Officer Quiz 1</span>
               </CommandItem>
             </CommandGroup>
           </CommandList>
@@ -213,18 +210,18 @@ const HeroSection = () => {
             Popular courses
           </h2>
           <ul className="flex items-start gap-3 flex-wrap max-w-xl">
-          {categories.map((category, index) => (
-            <Button
-              key={index}
-              variant="outline"
-              className={`border border-gray-300 rounded-xl px-2 py-1 flex items-center group hover:bg-slate-200 hover:scale-105 duration-300 transition-all`}
-            >
-              <div className="rounded-full text-xs md:text-base ">
-                {category.icon}
-              </div>
-              <span className="text-xs text-slate-600">{category.name}</span>
-            </Button>
-          ))}
+            {categories.map((category, index) => (
+              <Button
+                key={index}
+                variant="outline"
+                className={`border border-gray-300 rounded-xl px-2 py-1 flex items-center group hover:bg-slate-200 hover:scale-105 duration-300 transition-all`}
+              >
+                <div className="rounded-full text-xs md:text-base ">
+                  {category.icon}
+                </div>
+                <span className="text-xs text-slate-600">{category.name}</span>
+              </Button>
+            ))}
           </ul>
         </div>
       </div>
